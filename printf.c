@@ -248,60 +248,6 @@ return (-1);
 
 va_start(list, format);
 
-while (format[i])
-
-{
-
-while (format[i] != '%' && format[i])
-
-{
-
-_putchar(format[i]);
-
-len++;
-
-i++;
-
-}
-
-if (format[i] == '\0')
-
-return (len);
-
-f = find_correct_func(&format[i + 1]);
-
-if (f != NULL)
-	
-{
-
-len += f(list);
-
-i += 2;
-
-continue;
-
-}
-
-if (!format[i + 1])
-	
-	return (-1);
-	
-	_putchar(format[i]);
-	
-	len++;
-	
-	if (format[i + 1] == '%')
-	
-	i += 2;
-	
-	else
-	
-	i++;
-	
-	}
-
-va_end(list);
-
-return (len);
+while (format[i];
 
 }}
