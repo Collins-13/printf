@@ -7,31 +7,30 @@
 
 /**
  * check_for_specifiers - checks if there is a valid format specifier
- * @format: possible format specifier
- *
- * Return: pointer to valid function or NULL
- * find_correct_func - finding the format for _printf
+ * find_correct_func -  finding the format for _printf
+ * @format: possible format specifier 
  * @format: format
  * Return: NULL
  */
+
 static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
 	print_t p[] = {
 		{"c", print_char},
-                {"s", print_string},
-                {"i", print_int},
-                {"d", print_dec},
-                {"r", print_rev},
-                {"b", print_bin},
-                {"u", print_unsigned},
-                {"o", print_octal},
-                {"x", print_hex},
-                {"X", print_HEX},
-                {"R", print_rot13},
-                {"S", print_S},
-                {"p", print_p},
-                {NULL, NULL}
+		{"s", print_string},
+		{"i", print_int},
+		{"d", print_dec},
+		{"r", print_rev},
+		{"b", print_bin},
+		{"u", print_unsigned},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_HEX},
+		{"R", print_rot13},
+		{"S", print_S},
+		{"p", print_p},
+		{NULL, NULL}
 	};
 
 	for (i = 0; p[i].t != NULL; i++)
@@ -42,6 +41,7 @@ static int (*check_for_specifiers(const char *format))(va_list)
 		}
 	}
 	return (p[i].f);
+
 int (*find_correct_func(const char *format))(va_list)
 {
 unsigned int i = 0;
@@ -80,6 +80,7 @@ return (NULL);
  * @format: format
  * Return: size
  */
+
 int _printf(const char *format, ...)
 {
 	unsigned int i = 0, count = 0;
