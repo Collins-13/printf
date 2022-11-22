@@ -1,1 +1,3 @@
-Printf Team Project
+ C - printf
+1.
+2. 
